@@ -8,7 +8,7 @@ export const Popular = () => {
 
   useEffect(()=>{
     // fetch('http://localhost:4000/popularinwomen')
-    fetch('https://your-backend-api-name.onrender.com/popularinwomen')
+    fetch('https://ecommerce-api-lithin.onrender.com/popularinwomen')
     .then((response)=>response.json())
     .then((data)=>setPopularProducts(data));
   },[])

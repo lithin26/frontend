@@ -23,12 +23,12 @@ const ShopContextProvider=(props)=>{
 
     useEffect(()=>{
         // fetch('http://localhost:4000/allproducts')
-        fetch('https://your-backend-api-name.onrender.com/allproducts')
+        fetch('https://ecommerce-api-lithin.onrender.com/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://your-backend-api-name.onrender.com/getcart',{
+            fetch('https://ecommerce-api-lithin.onrender.com/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -45,7 +45,7 @@ const ShopContextProvider=(props)=>{
     const addToCart=(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         if(localStorage.getItem('auth-token')){
-            fetch('https://your-backend-api-name.onrender.com/addtocart',{
+            fetch('https://ecommerce-api-lithin.onrender.com/addtocart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -64,7 +64,7 @@ const ShopContextProvider=(props)=>{
     const removeFromCart=(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
         if(localStorage.getItem('auth-token')){
-             fetch('https://your-backend-api-name.onrender.com/removefromcart',{
+             fetch('https://ecommerce-api-lithin.onrender.com/removefromcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
